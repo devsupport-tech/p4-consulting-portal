@@ -1,0 +1,16 @@
+
+version: '3.8'
+
+services:
+  p4-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    # For development, you could mount volumes
+    # volumes:
+    #   - ./src:/app/src
